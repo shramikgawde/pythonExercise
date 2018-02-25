@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+
+  tasks:
+  - name: test custom module
+    anisble_ARTF:
+      product_name: "jboss"
+      product_version: "0.1"
