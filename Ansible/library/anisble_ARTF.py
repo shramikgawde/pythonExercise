@@ -3,8 +3,6 @@ import json
 
 from ansible.module_utils.basic import AnsibleModule
 from pprint import pprint
-from mwlib import util
-from mwlib.user import UserRecord
 
 def call_artifactory(module, product_name, product_version):
   if product_name == "Apache":
