@@ -21,9 +21,9 @@
       - "{{ user_product_details }}"
     register: product_details
 
-#  - name: debug
-#    debug:
-#      var: product_details.results
+  - name: debug
+    debug:
+      var: product_details.results
   
   - name: Get the product name
     set_fact:
