@@ -15,15 +15,17 @@
 
   - name: test custom module
     anisble_ARTF:
-      product_name: "{{ item.product_name}}"
-      product_version: "{{ item.product_version }}"
+      product_name: "{{ product_name}}"
+      product_version: "{{ product_version }}"
     with_items:
       - "{{ user_product_details }}"
     register: product_details
-  
-  - debug:
-      var: product_details.results.dict['dir_product_name']
-  
 
-
-      
+#  - name: debug
+#    debug:
+#      var: product_details.results
+  
+  - name: Get the product name
+    set_fact:
+      dir_product_name: "{{ lookup('template', 'get_product.j2') | replace('\n', '') | replace('  ','') }}"
+  
